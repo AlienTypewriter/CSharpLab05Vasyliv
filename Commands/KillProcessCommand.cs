@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Windows;
 using System.Windows.Input;
 
 namespace WpfApp1.Commands
@@ -31,7 +33,12 @@ namespace WpfApp1.Commands
 
             public void Execute(object parameter)
             {
+            try {
             parent.selectedProcess.Kill();
+            } catch(Win32Exception)
+            {
+                MessageBox.Show("System denied access");
+            }
         }
     } 
 }

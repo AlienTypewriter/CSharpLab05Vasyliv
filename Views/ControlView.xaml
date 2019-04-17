@@ -20,7 +20,7 @@
         <ComboBox SelectedIndex="{Binding SortIndex}" Name="FilterDropdown" ItemsSource="{Binding SortList}" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" Margin="0,0,80,0" />
         <Button Name="SortButton" Command="{Binding SortCommand}" Grid.Column="1" Grid.Row="1" Width="75" Margin="25,0,0,0">Sort</Button>
         <Button Name="DeleteButton" Command="{Binding KillProcessCommand}" Grid.Column="0" Grid.Row="0">Delete</Button>
-        <Button Name="OpenFolderButton" Command="{Binding KillProcessCommand}" Grid.Column="1" Grid.Row="0">Open folder</Button>
+        <Button Name="OpenFolderButton" Command="{Binding OpenFolderCommand}" Grid.Column="1" Grid.Row="0">Open folder</Button>
         <DataGrid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding ProcessModules}" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2"
                   MaxHeight="400" MaxWidth="400" MaxColumnWidth="80"></DataGrid>
         <DataGrid ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxHeight="500"
