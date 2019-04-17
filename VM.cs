@@ -27,7 +27,7 @@ namespace WpfApp1
         private int methodIndex = 0;
         internal Process selectedProcess = Process.GetProcessById(0);
         private BlockingCollection<SpecProcess> processQuery;
-        public string[] sortList = {"Name","ID","Responding","CPU Load", "RAM Load", "Started at", "Thread count", "User name" };
+        private string[] sortList = { "Name", "ID", "Responding", "CPU Load", "RAM Load", "Started at", "Thread count", "User name" };
         public int RowIndex { get => rowIndex; set
             {
                 rowIndex = value;
@@ -75,6 +75,7 @@ namespace WpfApp1
             }
         }
 
+        public string[] SortList { get => sortList; set => sortList = value; }
 
         public VM()
         {
@@ -95,7 +96,7 @@ namespace WpfApp1
         private BlockingCollection<SpecProcess> phQuery;
         private async void LaunchConstantRequery()
         {
-            await Task.Run(async () => {
+            await Task.Run(() => {
                 for (; ; )
                 {
                     SpecProcess[] copy = new SpecProcess[ProcessQuery.Count];

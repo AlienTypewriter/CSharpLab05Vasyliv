@@ -36,7 +36,7 @@ namespace WpfApp1.Commands
             {
             try
             {
-                Process.Start(@parent.selectedProcess.StartInfo.WorkingDirectory);
+                Process.Start(@""+parent.selectedProcess.StartInfo.WorkingDirectory);
             }
             catch (Win32Exception)
             {
